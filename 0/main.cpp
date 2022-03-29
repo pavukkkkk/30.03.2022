@@ -128,6 +128,7 @@ class Figures{
         }
     }
     void Removehilight(){
+        Remove(highlighted);
         highlighted = NULL;
     }
             
@@ -195,8 +196,11 @@ int main() {
     m.Gethighlight();
     m.Resizehilight(20, 30);
     m.Gethighlight();
-    m.Delall();
+    m.Removehilight();
+    m.Highlight(1, 2);
     m.Gethighlight();
+        m.Delall();
+        m.Gethighlight();
     }
     catch(FiguresException s){
         cout<<s.what()<<endl;
@@ -204,10 +208,11 @@ int main() {
    m.~Figures();
 }
 /*
- 8 9 3 4
- 7 3 4 5
- 2 2 1 4
- 2 2 1 4
- 2 2 20 30
+ 8 3 2 1
+ 7 3 23 40
+ 100 100 100 100
+ 8 3 2 1
+ 8 3 20 30
+ 7 3 23 40
  error_hilight
  */
